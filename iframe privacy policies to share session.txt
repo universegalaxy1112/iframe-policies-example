@@ -1,0 +1,8 @@
+session_set_cookie_params(["SameSite" => "none"]); //none, lax, strict
+session_set_cookie_params(["Secure" => "true"]); //false, true   
+header('P3P: CP="CAO IVDi OUR"');
+//header("Content-Security-Policy: frame-ancestors 'none'");
+header("Content-Security-Policy: frame-ancestors *");// https://*.butlerco.schoology.com *.butlerco.schoology.com butlerco.schoology.com https://butlerco.schoology.com https://*.app.schoology.com https://*.schoology.com *.schoology.com *.app.schoology.com https://*.my.softskillshigh.com *my.softskillshigh.com");
+header("X-Frame-Options: ALLOW-FROM *");
+header("Access-Control-Allow-Origin: *");
+session_start();
